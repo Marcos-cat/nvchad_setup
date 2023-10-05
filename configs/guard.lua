@@ -23,7 +23,7 @@ ft('go'):fmt 'gofmt'
 ft('typescript,css,html,markdown,json,javascript,svelte'):fmt(prettierfmt)
 ft('python'):fmt 'black'
 ft('rust'):fmt 'rustfmt'
-ft('bash'):fmt 'shfmt'
+ft('bash,sh'):fmt 'shfmt'
 ft('ocaml'):fmt(ocamlformat)
 
 -- Call setup() LAST!
