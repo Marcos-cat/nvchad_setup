@@ -17,6 +17,22 @@ mappings.general = {
     },
 }
 
+mappings.follow_link = {
+    n = {
+        ['<CR>'] = {
+            function()
+                require('follow-md-links').follow_link()
+            end,
+            'Follow the link',
+        },
+        ['<BS>'] = {
+            '<cmd> edit # <CR>',
+            'Go to previous buffer',
+            { silent = true },
+        },
+    },
+}
+
 mappings.primeagen = {
     n = {
         ['<leader>p'] = { '"+p', 'Clipboard paste' },

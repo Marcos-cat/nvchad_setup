@@ -125,8 +125,9 @@ local Plugins = {
     { 'tpope/vim-commentary', event = { 'BufEnter' } },
     { 'theprimeagen/harpoon' },
     { 'mbbill/undotree', cmd = { 'UndotreeToggle' } },
-    { 'williamboman/mason.nvim', opts = require 'custom.configs.mason'},
+    { 'williamboman/mason.nvim', opts = require 'custom.configs.mason' },
     { 'nvim-tree/nvim-tree.lua', enabled = false },
+    { 'jghauser/follow-md-links.nvim' },
 }
 
 return Plugins
