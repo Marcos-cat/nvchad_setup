@@ -1,8 +1,6 @@
 -- vim.g.vscode_snippets_path = vim.fn.stdpath 'config' .. '/lua/custom/snippets'
 
 vim.g.vim_markdown_frontmatter = 1
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
 vim.g.rustfmt_autosave = 1
 
 -- set termguicolors to enable highlight groups

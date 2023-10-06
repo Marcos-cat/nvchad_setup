@@ -123,6 +123,7 @@ local Plugins = {
     { 'mattn/emmet-vim', ft = { 'html', 'svelte' } },
     { 'tpope/vim-surround', event = { 'BufEnter' } },
     { 'tpope/vim-commentary', event = { 'BufEnter' } },
+    { 'tpope/vim-fugitive', cmd = { 'Git' } },
     { 'theprimeagen/harpoon' },
     { 'mbbill/undotree', cmd = { 'UndotreeToggle' } },
     { 'williamboman/mason.nvim', opts = require 'custom.configs.mason' },
