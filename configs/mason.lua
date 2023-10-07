@@ -24,6 +24,7 @@ M = {
         'gopls',
         'ocaml-lsp',
         'taplo',
+        'python-lsp-server',
     },
 }
 
