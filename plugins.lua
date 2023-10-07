@@ -1,10 +1,6 @@
 ---@type LazySpec[]
 local Plugins = {
     {
-        'folke/todo-comments.nvim',
-        dependencies = { 'nvim-lua/plenary.nvim' },
-    },
-    {
         'nvim-tree/nvim-web-devicons',
         opts = function()
             return { override = require 'nvchad.icons.devicons' }

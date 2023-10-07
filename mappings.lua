@@ -17,7 +17,9 @@ mappings.general = {
     },
 }
 
-mappings.fugitive = {
+-- TODO sdkf
+
+mappings.git = {
     n = {
         ['<leader>ga'] = { '<cmd> Git add . <CR>', 'Stage all files' },
         ['<leader>gc'] = {
@@ -29,6 +31,11 @@ mappings.fugitive = {
             'Commit branch',
         },
         ['<leader>gp'] = { '<cmd> Git push <CR>', 'Push to GitHub' },
+        ['<leader>gf'] = {
+            '<cmd> Telescope git_status <CR>',
+            'Telescope Git status',
+        },
+        ['<leader>gt'] = { '<cmd> Git <CR>', 'Open interactive Git menu' },
     },
 }
 
