@@ -17,6 +17,21 @@ mappings.general = {
     },
 }
 
+mappings.fugitive = {
+    n = {
+        ['<leader>ga'] = { '<cmd> Git add . <CR>', 'Stage all files' },
+        ['<leader>gc'] = {
+            function()
+                local message = vim.fn.input 'Commit message: '
+
+                vim.cmd('Git commit -m "' .. message .. '"')
+            end,
+            'Commit branch',
+        },
+        ['<leader>gp'] = { '<cmd> Git push <CR>', 'Push to GitHub' },
+    },
+}
+
 mappings.follow_link = {
     n = {
         ['<CR>'] = {
