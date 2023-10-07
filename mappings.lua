@@ -70,19 +70,6 @@ mappings.primeagen = {
     },
 }
 
-mappings.obsidian = {
-    n = {
-        ['<leader>of'] = {
-            '<cmd> ObsidianFollowLink <CR>',
-            'Follow a link in Obsidian',
-        },
-        ['<leader>ob'] = {
-            '<cmd> ObsidianBacklinks <CR>',
-            'View Backlinks in Obsidian',
-        },
-    },
-}
-
 mappings.crates = {
     n = {
         ['<leader>rcu'] = {

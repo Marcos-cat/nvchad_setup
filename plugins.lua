@@ -1,6 +1,10 @@
 ---@type LazySpec[]
 local Plugins = {
     {
+        'folke/todo-comments.nvim',
+        dependencies = { 'nvim-lua/plenary.nvim' },
+    },
+    {
         'nvim-tree/nvim-web-devicons',
         opts = function()
             return { override = require 'nvchad.icons.devicons' }
@@ -13,14 +17,6 @@ local Plugins = {
                 require 'custom.configs.devicons'
             )
             require('nvim-web-devicons').setup(opts)
-        end,
-    },
-    {
-        'epwalsh/obsidian.nvim',
-        -- event = { 'BufEnter /home/marcospotato/Documents/Notes/**.md', 'BufReadPre /home/marcospotato/Documents/Notes/**.md', 'BufNewFile /home/marcospotato/Documents/Notes/**.md', },
-        dependencies = 'nvim-lua/plenary.nvim',
-        config = function()
-            require 'custom.configs.obsidian'
         end,
     },
     {
