@@ -19,7 +19,7 @@ mappings.general = {
 
 mappings.git = {
     n = {
-        ['<leader>ga'] = { '<cmd> Git add . <CR>', 'Stage all files' },
+        ['<leader>ga'] = { '<cmd> Git add --all <CR>', 'Stage all files' },
         ['<leader>gc'] = {
             function()
                 local message = vim.fn.input 'Commit message: '
