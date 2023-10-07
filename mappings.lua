@@ -17,8 +17,6 @@ mappings.general = {
     },
 }
 
--- TODO sdkf
-
 mappings.git = {
     n = {
         ['<leader>ga'] = { '<cmd> Git add . <CR>', 'Stage all files' },
@@ -30,7 +28,11 @@ mappings.git = {
             end,
             'Commit branch',
         },
-        ['<leader>gp'] = { '<cmd> Git push <CR>', 'Push to GitHub' },
+        ['<leader>gp'] = {
+            '<cmd> Git push <CR>',
+            'Push to GitHub',
+            { silent = true },
+        },
         ['<leader>gf'] = {
             '<cmd> Telescope git_status <CR>',
             'Telescope Git status',
