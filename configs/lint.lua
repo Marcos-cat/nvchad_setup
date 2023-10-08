@@ -1,7 +1,7 @@
 require('lint').linters_by_ft = {
     javascript = { 'deno' },
     typescript = { 'deno' },
-    python = { 'mypy' },
+    python = { 'mypy', 'ruff' },
 }
 
 vim.api.nvim_create_autocmd({ 'BufWritePost' }, {

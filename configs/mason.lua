@@ -18,6 +18,7 @@ M = {
         'black',
         'pyright',
         'mypy',
+        'ruff',
 
         'json-lsp',
         'rust-analyzer',
