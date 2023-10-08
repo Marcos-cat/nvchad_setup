@@ -14,7 +14,11 @@ M = {
         'svelte-language-server',
         'bash-language-server',
         'jdtls',
+
         'black',
+        'pyright',
+        'mypy',
+
         'json-lsp',
         'rust-analyzer',
         'clangd',
@@ -23,7 +27,6 @@ M = {
         'gopls',
         'ocaml-lsp',
         'taplo',
-        'python-lsp-server',
     },
 }
 

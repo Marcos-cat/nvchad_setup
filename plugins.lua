@@ -1,6 +1,13 @@
 ---@type LazySpec[]
 local Plugins = {
     {
+        'mfussenegger/nvim-lint',
+        config = function()
+            require 'custom.configs.lint'
+        end,
+        ft = require 'custom.used_filetypes',
+    },
+    {
         'nvim-tree/nvim-web-devicons',
         opts = function()
             return { override = require 'nvchad.icons.devicons' }

@@ -9,7 +9,7 @@ local servers = {
     'ltex',
     'bashls',
     'gopls',
-    'pylsp',
+    'pyright',
     'jdtls',
     'html',
     'cssls',
