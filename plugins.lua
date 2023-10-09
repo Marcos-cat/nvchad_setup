@@ -126,6 +126,7 @@ local Plugins = {
     { 'theprimeagen/harpoon' },
     { 'mbbill/undotree', cmd = { 'UndotreeToggle' } },
     { 'williamboman/mason.nvim', opts = require 'custom.configs.mason' },
+    { 'ThePrimeagen/vim-be-good', cmd = { 'VimBeGood' } },
     { 'nvim-tree/nvim-tree.lua', enabled = false },
     { 'jghauser/follow-md-links.nvim' },
 }
