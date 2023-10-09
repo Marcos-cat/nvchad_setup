@@ -1,6 +1,13 @@
 ---@type LazySpec[]
 local Plugins = {
     {
+        'gelguy/wilder.nvim',
+        config = function()
+            require 'custom.configs.wilder'
+        end,
+        dependencies = { 'romgrk/fzy-lua-native' },
+    },
+    {
         'mfussenegger/nvim-lint',
         config = function()
             require 'custom.configs.lint'
@@ -112,9 +119,7 @@ local Plugins = {
     {
         'max397574/better-escape.nvim',
         event = 'InsertEnter',
-        config = function()
-            require('better_escape').setup()
-        end,
+        opts = {},
     },
     { 'fladson/vim-kitty', ft = 'kitty' },
     { 'rust-lang/rust.vim', ft = 'rust' },

@@ -1,4 +1,4 @@
-# Nvchad Config
+# NvChad Config
 
 Repo started 2023-10-04
 
