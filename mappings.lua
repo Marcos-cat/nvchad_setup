@@ -48,6 +48,7 @@ mappings.follow_link = {
                 require('follow-md-links').follow_link()
             end,
             'Follow the link',
+            { silent = true },
         },
         ['<BS>'] = {
             '<cmd> edit # <CR>',
