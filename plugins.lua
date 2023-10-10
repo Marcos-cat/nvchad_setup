@@ -6,6 +6,7 @@ local Plugins = {
             require 'custom.configs.wilder'
         end,
         dependencies = { 'romgrk/fzy-lua-native' },
+        event = 'CmdlineEnter',
     },
     {
         'mfussenegger/nvim-lint',
@@ -35,7 +36,6 @@ local Plugins = {
         config = function()
             require 'custom.configs.guard'
         end,
-        ft = require 'custom.used_filetypes',
         cmd = 'GuardFmt',
     },
     {

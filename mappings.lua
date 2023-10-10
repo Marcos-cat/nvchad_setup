@@ -5,9 +5,9 @@ mappings.general = {
         ['<leader>fm'] = { '<cmd> GuardFmt <CR>', 'Format code' },
         ['<leader>ru'] = { '<cmd> RunCode <CR>', 'Run file' },
         ['<leader>re'] = { ':%s/', 'File-wide search & replace' },
-        ['<leader>sa'] = { ' :w <CR>', 'Format and Save' },
+        ['<leader>sa'] = { ':w <CR>', 'Save' },
         ['<leader>u'] = { '<cmd> UndotreeToggle <CR>', 'Undo Tree' },
-        ['<leader>Q'] = { ':wa<CR>:qa<CR>', 'Close Vim' },
+        ['<leader>Q'] = { '<cmd> quitall <CR>', 'Close Vim' },
         ['<leader>tt'] = {
             function()
                 require('base46').toggle_transparency()
@@ -60,12 +60,21 @@ mappings.follow_link = {
 
 mappings.primeagen = {
     n = {
+        ['x'] = { '"_x' },
+
+        ['d'] = { '""d' },
+        ['c'] = { '""c' },
+        ['<leader>d'] = { '"_d', 'Delete without yanking' },
+        ['<leader>c'] = { '"_c', 'Change without yanking' },
+
+        ['p'] = { '""p' },
+        ['y'] = { '""y' },
         ['<leader>p'] = { '"+p', 'Clipboard paste' },
         ['<leader>y'] = { '"+y', 'Clipboard yank' },
+
         ['J'] = { 'mzJ`z', 'Append the following line to the current line' },
         ['<C-d>'] = { '<C-d>zz', 'Move a half page down' },
         ['<C-u>'] = { '<C-u>zz', 'Move a half page up' },
-        ['<leader>d'] = { '"_d', 'Delete without yanking' },
         ['Q'] = { '<nop>', 'Disable the horrors of Q' },
     },
     x = {
