@@ -17,6 +17,14 @@ mappings.general = {
     },
 }
 
+mappings.snek_case = {
+    n = {
+        ['<leader>sn'] = { '<cmd> Snek <CR>', 'Snake Case' },
+        ['<leader>sc'] = { '<cmd> Camel <CR>', 'Camel Case' },
+        ['<leader>sb'] = { '<cmd> CamelB <CR>', 'Camel Case' },
+    },
+}
+
 mappings.git = {
     n = {
         ['<leader>ga'] = { '<cmd> Git add --all <CR>', 'Stage all files' },

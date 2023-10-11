@@ -121,6 +121,12 @@ local Plugins = {
         event = 'InsertEnter',
         opts = {},
     },
+    {
+        'otavioschwanck/cool-substitute.nvim',
+        opts = { setup_keybindings = true },
+        event = 'BufEnter',
+    },
+    { 'nicwest/vim-camelsnek', cmd = { 'Snek', 'Camel', 'CamelB', 'Screm' } },
     { 'fladson/vim-kitty', ft = 'kitty' },
     { 'rust-lang/rust.vim', ft = 'rust' },
     { 'b0o/schemastore.nvim', ft = 'json' },
