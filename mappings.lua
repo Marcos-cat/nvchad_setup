@@ -17,6 +17,17 @@ mappings.general = {
     },
 }
 
+mappings.kiwi = {
+    n = {
+        ['<leader>mm'] = {
+            function ()
+                require("kiwi").todo.toggle()
+            end,
+            'Toggle todo'
+        }
+    }
+}
+
 mappings.snek_case = {
     n = {
         ['<leader>sn'] = { '<cmd> Snek <CR>', 'Snake Case' },

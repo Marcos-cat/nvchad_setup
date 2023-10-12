@@ -126,6 +126,10 @@ local Plugins = {
         opts = { setup_keybindings = true },
         event = 'BufEnter',
     },
+    {
+        'serenevoid/kiwi.nvim',
+        dependencies = { 'nvim-lua/plenary.nvim' },
+    },
     { 'nicwest/vim-camelsnek', cmd = { 'Snek', 'Camel', 'CamelB', 'Screm' } },
     { 'fladson/vim-kitty', ft = 'kitty' },
     { 'rust-lang/rust.vim', ft = 'rust' },
