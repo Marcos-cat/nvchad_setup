@@ -1,10 +1,14 @@
 local ft = require 'guard.filetype'
 
-local config_path = '/home/marcospotato/.config/prettier/.prettierrc'
+local path = '/home/marcospotato/.config/'
+
+local prettier_config = path .. 'prettier/.prettierrc'
+local clang_config = path .. 'clang/.clang-format'
+local stylua_config = path .. 'stylua/.stylua.toml'
 
 local prettierfmt = {
     cmd = 'prettier',
-    args = { '--config', config_path, '--stdin-filepath' },
+    args = { '--config', prettier_config, '--stdin-filepath' },
     fname = true,
     stdin = true,
 }
@@ -16,9 +20,21 @@ local ocamlformat = {
     fname = true,
 }
 
+local clangformat = {
+    cmd = 'clang-format',
+    args = { '-style=file:' .. clang_config },
+    stdin = true,
+}
+
+local styluaformat = {
+    cmd = 'stylua',
+    args = { '-f', stylua_config, '-' },
+    stdin = true,
+}
+
 -- Assuming you have guard-collection
-ft('c,cpp,java'):fmt 'clang-format'
-ft('lua'):fmt 'stylua'
+ft('c,cpp,java'):fmt(clangformat)
+ft('lua'):fmt(styluaformat)
 ft('go'):fmt 'gofmt'
 ft('typescript,css,html,markdown,json,javascript,svelte'):fmt(prettierfmt)
 ft('python'):fmt 'black'
