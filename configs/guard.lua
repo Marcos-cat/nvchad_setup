@@ -6,7 +6,7 @@ local prettier_config = path .. 'prettier/.prettierrc'
 local clang_config = path .. 'clang/.clang-format'
 local stylua_config = path .. 'stylua/.stylua.toml'
 
-local prettierfmt = {
+local prettier = {
     cmd = 'prettier',
     args = { '--config', prettier_config, '--stdin-filepath' },
     fname = true,
@@ -26,7 +26,7 @@ local clangformat = {
     stdin = true,
 }
 
-local styluaformat = {
+local stylua = {
     cmd = 'stylua',
     args = { '-f', stylua_config, '-' },
     stdin = true,
@@ -34,9 +34,9 @@ local styluaformat = {
 
 -- Assuming you have guard-collection
 ft('c,cpp,java'):fmt(clangformat)
-ft('lua'):fmt(styluaformat)
+ft('lua'):fmt(stylua)
 ft('go'):fmt 'gofmt'
-ft('typescript,css,html,markdown,json,javascript,svelte'):fmt(prettierfmt)
+ft('typescript,css,html,markdown,json,javascript,svelte'):fmt(prettier)
 ft('python'):fmt 'black'
 ft('rust'):fmt 'rustfmt'
 ft('bash,sh'):fmt 'shfmt'
