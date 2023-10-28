@@ -1,7 +1,7 @@
 ---@type LazySpec[]
 local Plugins = {
     {
-        'gelguy/wilder.nvim',
+        'gelguy/wilder.nvim', -- Makes cmd mode and search mode have suggestions
         config = function()
             require 'custom.configs.wilder'
         end,
@@ -9,14 +9,14 @@ local Plugins = {
         event = 'CmdlineEnter',
     },
     {
-        'mfussenegger/nvim-lint',
+        'mfussenegger/nvim-lint', -- Adds linting
         config = function()
             require 'custom.configs.lint'
         end,
         ft = require 'custom.used_filetypes',
     },
     {
-        'nvim-tree/nvim-web-devicons',
+        'nvim-tree/nvim-web-devicons', -- Adds configurable filetype icons
         opts = function()
             return { override = require 'nvchad.icons.devicons' }
         end,
@@ -31,7 +31,7 @@ local Plugins = {
         end,
     },
     {
-        'nvimdev/guard.nvim',
+        'nvimdev/guard.nvim', -- Adds code formatting
         dependencies = 'nvimdev/guard-collection',
         config = function()
             require 'custom.configs.guard'
@@ -39,7 +39,7 @@ local Plugins = {
         cmd = 'GuardFmt',
     },
     {
-        'saecki/crates.nvim',
+        'saecki/crates.nvim', -- Looks up crate versions from github and displays them inline
         ft = { 'rust', 'toml' },
         dependencies = 'hrsh7th/nvim-cmp',
         config = function(_, opts)
@@ -49,7 +49,7 @@ local Plugins = {
         end,
     },
     {
-        'hrsh7th/nvim-cmp',
+        'hrsh7th/nvim-cmp', -- Adds lsp and snippet autocomplete while typing
         opts = function()
             local M = require 'plugins.configs.cmp'
             table.insert(M.sources, { name = 'crates' })
@@ -57,14 +57,14 @@ local Plugins = {
         end,
     },
     {
-        'CRAG666/code_runner.nvim',
+        'CRAG666/code_runner.nvim', -- Runs the current file in a differnt buffer
         config = function()
             require 'custom.configs.code_runner'
         end,
         cmd = { 'RunCode', 'RunFile', 'RunProject' },
     },
     {
-        'samodostal/image.nvim',
+        'samodostal/image.nvim', -- Turns images into ASCII art to view in a buffer
         dependencies = {
             'nvim-lua/plenary.nvim',
             'm00qek/baleia.nvim',
@@ -75,14 +75,14 @@ local Plugins = {
         event = 'BufEnter',
     },
     {
-        'windwp/nvim-ts-autotag',
+        'windwp/nvim-ts-autotag', -- Adds a closing tag when writing html
         config = function()
             require('nvim-ts-autotag').setup()
         end,
         ft = { 'svelte', 'html', 'xml' },
     },
     {
-        'christoomey/vim-tmux-navigator',
+        'christoomey/vim-tmux-navigator', -- Maps Ctrl-hjkl to moving windows and tmux panes
         cmd = {
             'TmuxNavigateUp',
             'TmuxNavigateDown',
@@ -91,7 +91,7 @@ local Plugins = {
         },
     },
     {
-        'kevinhwang91/nvim-ufo',
+        'kevinhwang91/nvim-ufo', -- Adds folding that looks decent
         dependencies = 'kevinhwang91/promise-async',
         event = { 'BufEnter' },
         config = function()
@@ -103,33 +103,25 @@ local Plugins = {
         end,
     },
     {
-        'neovim/nvim-lspconfig',
+        'neovim/nvim-lspconfig', -- Configures LSPs
         config = function()
             require 'plugins.configs.lspconfig'
             require 'custom.configs.lspconfig'
         end, -- Override to setup mason-lspconfig
     },
     {
-        'nvim-treesitter/nvim-treesitter',
+        'nvim-treesitter/nvim-treesitter', -- Enables good synatax highlighting for many languages
         opts = require 'custom.configs.treesitter',
         init = function()
             require('nvim-treesitter.install').prefer_git = true
         end,
     },
     {
-        'max397574/better-escape.nvim',
-        event = 'InsertEnter',
-        opts = {},
-    },
-    {
         'otavioschwanck/cool-substitute.nvim',
         opts = { setup_keybindings = true },
         event = 'BufEnter',
     },
-    {
-        'serenevoid/kiwi.nvim',
-        dependencies = { 'nvim-lua/plenary.nvim' },
-    },
+    { 'max397574/better-escape.nvim', event = 'InsertEnter', opts = {} },
     { 'nicwest/vim-camelsnek', cmd = { 'Snek', 'Camel', 'CamelB', 'Screm' } },
     { 'fladson/vim-kitty', ft = 'kitty' },
     { 'rust-lang/rust.vim', ft = 'rust' },

@@ -16,6 +16,7 @@ local servers = {
     'svelte',
     'tsserver',
     'ocamllsp',
+    'uiua',
     'taplo',
     'tailwindcss',
 }
