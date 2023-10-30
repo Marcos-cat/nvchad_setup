@@ -1,6 +1,19 @@
 ---@type LazySpec[]
 local Plugins = {
     {
+        'ggandor/leap.nvim', -- You can move to a spot using two letter pairs
+        config = function()
+            require('leap').add_default_mappings()
+        end,
+        keys = { 's', 'S' },
+    },
+    {
+        'stevearc/oil.nvim', -- Adds an editable file viewer with - (dash)
+        opts = {},
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
+        cmd = { 'Oil' },
+    },
+    {
         'gelguy/wilder.nvim', -- Makes cmd mode and search mode have suggestions
         config = function()
             require 'custom.configs.wilder'
