@@ -17,15 +17,10 @@ mappings.general = {
     },
 }
 
-mappings.kiwi = {
+mappings.oil = {
     n = {
-        ['<leader>mm'] = {
-            function ()
-                require("kiwi").todo.toggle()
-            end,
-            'Toggle todo'
-        }
-    }
+        ['-'] = { '<cmd> Oil <CR>', 'Open Oil' },
+    },
 }
 
 mappings.snek_case = {
