@@ -59,10 +59,11 @@ mappings.follow_link = {
     n = {
         ['<CR>'] = {
             function()
-                require('follow-md-links').follow_link()
+                if vim.o.filetype == 'markdown' then
+                    vim.cmd 'Telekasten follow_link'
+                end
             end,
             'Follow the link',
-            { silent = true },
         },
         ['<BS>'] = {
             '<cmd> edit # <CR>',

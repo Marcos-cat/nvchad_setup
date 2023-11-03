@@ -1,6 +1,12 @@
 ---@type LazySpec[]
 local Plugins = {
     {
+        'renerocksai/telekasten.nvim',
+        dependencies = { 'nvim-telescope/telescope.nvim' },
+        opts = { home = vim.fn.expand '~/Documents/Notes' },
+        cmd = 'Telekasten',
+    },
+    {
         'ggandor/leap.nvim', -- You can move to a spot using two letter pairs
         config = function()
             require('leap').add_default_mappings()
@@ -11,7 +17,7 @@ local Plugins = {
         'stevearc/oil.nvim', -- Adds an editable file viewer with - (dash)
         opts = {},
         dependencies = { 'nvim-tree/nvim-web-devicons' },
-        cmd = { 'Oil' },
+        cmd = 'Oil',
     },
     {
         'gelguy/wilder.nvim', -- Makes cmd mode and search mode have suggestions
@@ -143,7 +149,6 @@ local Plugins = {
     { 'tpope/vim-surround', event = { 'BufEnter' } },
     { 'tpope/vim-commentary', event = { 'BufEnter' } },
     { 'tpope/vim-fugitive', cmd = { 'Git' } },
-    { 'theprimeagen/harpoon' },
     { 'mbbill/undotree', cmd = { 'UndotreeToggle' } },
     { 'williamboman/mason.nvim', opts = require 'custom.configs.mason' },
     { 'ThePrimeagen/vim-be-good', cmd = { 'VimBeGood' } },
