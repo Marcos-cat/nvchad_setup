@@ -2,12 +2,6 @@ local highlights = {}
 
 ---@type HLTable
 highlights.override = {
-    Comment = {
-        italic = true,
-    },
-    kittyComment = {
-        italic = true,
-    },
     LineNr = {
         fg = 'blue',
     },
@@ -22,6 +16,15 @@ highlights.override = {
         bg = 'NONE',
         fg = 'grey_fg',
         bold = true,
+    },
+    MyTag = {
+        fg = 'purple',
+    },
+}
+
+highlights.add = {
+    MyTag = {
+        fg = 'purple',
     },
 }
 

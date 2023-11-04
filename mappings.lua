@@ -10,10 +10,17 @@ mappings.general = {
         ['<leader>Q'] = { '<cmd> quitall <CR>', 'Close Vim' },
         ['<leader>tt'] = {
             function()
-                require('base46').toggle_transparency()
+                MarkdownHighlightTags()
             end,
             'Toggle Transparency',
         },
+    },
+}
+
+mappings.icon_picker = {
+    n = {
+        ['<leader>ei'] = { '<cmd> IconPickerNormal <CR>', 'Insert Emoji' },
+        ['<leader>ey'] = { '<cmd> IconPickerYank <CR>', 'Insert Emoji' },
     },
 }
 
@@ -55,7 +62,7 @@ mappings.git = {
     },
 }
 
-mappings.follow_link = {
+mappings.telekasten = {
     n = {
         ['<CR>'] = {
             function()
@@ -64,6 +71,14 @@ mappings.follow_link = {
                 end
             end,
             'Follow the link',
+        },
+        ['<leader>tm'] = {
+            function()
+                if vim.o.filetype == 'markdown' then
+                    vim.cmd 'Telekasten toggle_todo'
+                end
+            end,
+            'Toggle Todo',
         },
         ['<BS>'] = {
             '<cmd> edit # <CR>',

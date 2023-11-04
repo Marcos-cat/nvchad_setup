@@ -1,6 +1,10 @@
 -- vim.g.vscode_snippets_path = vim.fn.stdpath 'config' .. '/lua/custom/snippets'
 
-vim.cmd[[
+function MarkdownHighlightTags()
+    vim.cmd 'syntax match MyTag /#[\\x21-\\x7E]\\+/'
+end
+
+vim.cmd [[
   autocmd FileType markdown setlocal wrap
   autocmd FileType markdown setlocal linebreak
 ]]

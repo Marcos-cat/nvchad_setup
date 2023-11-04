@@ -1,9 +1,21 @@
+local notes_home = vim.fn.expand '~/Documents/Notes'
+
 ---@type LazySpec[]
 local Plugins = {
     {
+        'ziontee113/icon-picker.nvim',
+        opts = { disable_legacy_commands = true },
+        dependencies = { 'stevearc/dressing.nvim' },
+        cmd = { 'IconPickerInsert', 'IconPickerNormal', 'IconPickerYank' },
+    },
+    {
         'renerocksai/telekasten.nvim',
         dependencies = { 'nvim-telescope/telescope.nvim' },
-        opts = { home = vim.fn.expand '~/Documents/Notes' },
+        opts = {
+            home = notes_home,
+            dailies = notes_home .. '/dailies',
+            auto_set_filetype = false,
+        },
         cmd = 'Telekasten',
     },
     {
@@ -123,6 +135,7 @@ local Plugins = {
     },
     {
         'neovim/nvim-lspconfig', -- Configures LSPs
+        dependencies = { 'stevearc/dressing.nvim' },
         config = function()
             require 'plugins.configs.lspconfig'
             require 'custom.configs.lspconfig'
