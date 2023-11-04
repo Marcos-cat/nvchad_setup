@@ -18,7 +18,6 @@ local servers = {
     'ocamllsp',
     'uiua',
     'taplo',
-    'tailwindcss',
 }
 
 for _, lsp in ipairs(servers) do
