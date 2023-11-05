@@ -139,31 +139,4 @@ mappings.tmux = {
     },
 }
 
-local function nav_file(n)
-    return function()
-        require('harpoon.ui').nav_file(n)
-    end
-end
-
-mappings.harpoon = {
-    n = {
-        ['<leader>a'] = {
-            function()
-                require('harpoon.mark').add_file()
-            end,
-            'Add file Harpoon',
-        },
-        ['<C-e>'] = {
-            function()
-                require('harpoon.ui').toggle_quick_menu()
-            end,
-            'File menu Harpoon',
-        },
-        ['<leader>h'] = { nav_file(1), 'Harpoon 1' },
-        ['<leader>j'] = { nav_file(2), 'Harpoon 2' },
-        ['<leader>k'] = { nav_file(3), 'Harpoon 3' },
-        ['<leader>l'] = { nav_file(4), 'Harpoon 4' },
-    },
-}
-
 return mappings
