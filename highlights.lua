@@ -3,10 +3,10 @@ local highlights = {}
 ---@type HLTable
 highlights.override = {
     LineNr = {
-        fg = 'blue',
+        fg = 'light_grey',
     },
     CursorLineNr = {
-        fg = 'green',
+        fg = 'blue',
         bold = true,
     },
     CursorLine = {
