@@ -3,6 +3,21 @@ local notes_home = vim.fn.expand '~/Documents/Notes'
 ---@type LazySpec[]
 local Plugins = {
     {
+        'folke/noice.nvim',
+        event = 'VeryLazy',
+        opts = require 'custom.configs.noice',
+        dependencies = {
+            'MunifTanjim/nui.nvim',
+            {
+                'rcarriga/nvim-notify',
+                opts = {
+                    render = 'compact',
+                    timeout = 2000,
+                },
+            },
+        },
+    },
+    {
         'ziontee113/icon-picker.nvim',
         opts = { disable_legacy_commands = true },
         dependencies = { 'stevearc/dressing.nvim' },
@@ -30,14 +45,6 @@ local Plugins = {
         opts = {},
         dependencies = { 'nvim-tree/nvim-web-devicons' },
         cmd = 'Oil',
-    },
-    {
-        'gelguy/wilder.nvim', -- Makes cmd mode and search mode have suggestions
-        config = function()
-            require 'custom.configs.wilder'
-        end,
-        dependencies = { 'romgrk/fzy-lua-native' },
-        event = 'CmdlineEnter',
     },
     {
         'mfussenegger/nvim-lint', -- Adds linting

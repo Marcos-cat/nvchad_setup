@@ -17,15 +17,27 @@ highlights.override = {
         fg = 'grey_fg',
         bold = true,
     },
-    MyTag = {
-        fg = 'purple',
-    },
 }
 
+---@type HLTable
 highlights.add = {
-    MyTag = {
-        fg = 'purple',
-    },
+    NotifyERRORBorder = { fg = 'red' },
+    NotifyERRORIcon = { fg = 'red' },
+    NotifyERRORTitle = { fg = 'red' },
+    NotifyWARNBorder = { fg = 'orange' },
+    NotifyWARNIcon = { fg = 'orange' },
+    NotifyWARNTitle = { fg = 'orange' },
+    NotifyINFOBorder = { fg = 'green' },
+    NotifyINFOIcon = { fg = 'green' },
+    NotifyINFOTitle = { fg = 'green' },
+    NotifyTRACEBorder = { fg = 'purple' },
+    NotifyTRACEIcon = { fg = 'purple' },
+    NotifyTRACETitle = { fg = 'purple' },
+    NotifyDEBUGBorder = { fg = 'grey' },
+    NotifyDEBUGIcon = { fg = 'grey' },
+    NotifyDEBUGTitle = { fg = 'grey' },
+
+    tkTag = { fg = 'purple' },
 }
 
 return highlights
