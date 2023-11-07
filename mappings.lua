@@ -8,12 +8,6 @@ mappings.general = {
         ['<leader>sa'] = { ':w <CR>', 'Save' },
         ['<leader>u'] = { '<cmd> UndotreeToggle <CR>', 'Undo Tree' },
         ['<leader>Q'] = { '<cmd> quitall <CR>', 'Close Vim' },
-        ['<leader>tt'] = {
-            function()
-                MarkdownHighlightTags()
-            end,
-            'Toggle Transparency',
-        },
     },
 }
 

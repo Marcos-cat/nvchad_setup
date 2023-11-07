@@ -16,6 +16,7 @@ M = {
         'cpp',
         'markdown',
         'markdown_inline',
+        'latex',
         'java',
         'python',
         'go',

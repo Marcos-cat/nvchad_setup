@@ -3,6 +3,14 @@ local notes_home = vim.fn.expand '~/Documents/Notes'
 ---@type LazySpec[]
 local Plugins = {
     {
+        'jbyuki/nabla.nvim',
+        opts = { autogen = true, silent = true },
+        ft = 'markdown',
+        config = function(_, opts)
+            require('nabla').enable_virt(opts)
+        end,
+    },
+    {
         'folke/noice.nvim',
         event = 'VeryLazy',
         opts = require 'custom.configs.noice',
@@ -12,7 +20,9 @@ local Plugins = {
                 'rcarriga/nvim-notify',
                 opts = {
                     render = 'compact',
+                    stages = 'fade',
                     timeout = 2000,
+                    fps = 60,
                 },
             },
         },
@@ -173,7 +183,6 @@ local Plugins = {
     { 'williamboman/mason.nvim', opts = require 'custom.configs.mason' },
     { 'ThePrimeagen/vim-be-good', cmd = { 'VimBeGood' } },
     { 'nvim-tree/nvim-tree.lua', enabled = false },
-    { 'jghauser/follow-md-links.nvim' },
 }
 
 return Plugins
