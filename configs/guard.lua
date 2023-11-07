@@ -43,7 +43,7 @@ local stylua = {
 ft('c,cpp,java'):fmt(clangformat)
 ft('lua'):fmt(stylua)
 ft('go'):fmt 'gofmt'
-ft('typescript,css,html,markdown,json,javascript'):fmt(prettier)
+ft('typescript,css,html,json,javascript'):fmt(prettier)
 ft('svelte'):fmt(svelte_prettier)
 ft('python'):fmt 'black'
 ft('rust'):fmt 'rustfmt'
