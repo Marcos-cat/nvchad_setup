@@ -1,6 +1,4 @@
-local M = {}
-
-M = {
+local M = {
     ensure_installed = {
         'tailwindcss-language-server',
         'lua-language-server',
