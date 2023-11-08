@@ -5,10 +5,10 @@ local Plugins = {
     {
         'jbyuki/nabla.nvim',
         opts = { autogen = true, silent = true },
-        ft = 'markdown',
         config = function(_, opts)
             require('nabla').enable_virt(opts)
         end,
+        cmd = 'Nabla',
     },
     {
         'folke/noice.nvim',
