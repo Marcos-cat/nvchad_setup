@@ -11,6 +11,12 @@ mappings.general = {
     },
 }
 
+mappings.aerial = {
+    n = {
+        ['\\'] = { '<cmd> AerialNavToggle <CR>', 'Open Aerial' },
+    },
+}
+
 mappings.icon_picker = {
     n = {
         ['<leader>ei'] = { '<cmd> IconPickerNormal <CR>', 'Insert Emoji' },

@@ -6,7 +6,6 @@ local util = require 'lspconfig/util'
 
 -- if you just want default config for the servers then put them in a table
 local servers = {
-    'ltex',
     'bashls',
     'gopls',
     'pyright',
@@ -16,7 +15,6 @@ local servers = {
     'svelte',
     'tsserver',
     'ocamllsp',
-    'uiua',
     'taplo',
 }
 
@@ -26,6 +24,20 @@ for _, lsp in ipairs(servers) do
         capabilities = capabilities,
     }
 end
+
+lspconfig.ltex.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+
+    settings = {
+        ltex = {
+            completionEnabled = true,
+            dictionary = {
+                ['en-US'] = { 'Uiua' },
+            },
+        },
+    },
+}
 
 lspconfig.rust_analyzer.setup {
     on_attach = on_attach,

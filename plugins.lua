@@ -3,6 +3,19 @@ local notes_home = vim.fn.expand '~/Documents/Notes'
 ---@type LazySpec[]
 local Plugins = {
     {
+        'stevearc/aerial.nvim',
+        opts = {
+            on_attach = function(bufnr)
+                local opts = { buffer = bufnr }
+                vim.keymap.set('n', '{', '<cmd>AerialPrev<CR>', opts)
+                vim.keymap.set('n', '}', '<cmd>AerialNext<CR>', opts)
+            end,
+            filter_kind = false,
+            autojump = true,
+        },
+        cmd = { 'AerialToggle', 'AerialNavToggle' },
+    },
+    {
         'jbyuki/nabla.nvim',
         opts = { autogen = true, silent = true },
         config = function(_, opts)
@@ -152,7 +165,17 @@ local Plugins = {
     },
     {
         'neovim/nvim-lspconfig', -- Configures LSPs
-        dependencies = { 'stevearc/dressing.nvim' },
+        dependencies = {
+            'stevearc/dressing.nvim',
+            {
+                'onsails/lspkind.nvim',
+                config = function()
+                    require('lspkind').init {
+                        symbol_map = require 'custom.configs.lspkind',
+                    }
+                end,
+            },
+        },
         config = function()
             require 'plugins.configs.lspconfig'
             require 'custom.configs.lspconfig'
