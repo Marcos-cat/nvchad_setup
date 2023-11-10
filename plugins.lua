@@ -4,15 +4,7 @@ local notes_home = vim.fn.expand '~/Documents/Notes'
 local Plugins = {
     {
         'stevearc/aerial.nvim',
-        opts = {
-            on_attach = function(bufnr)
-                local opts = { buffer = bufnr }
-                vim.keymap.set('n', '{', '<cmd>AerialPrev<CR>', opts)
-                vim.keymap.set('n', '}', '<cmd>AerialNext<CR>', opts)
-            end,
-            filter_kind = false,
-            autojump = true,
-        },
+        opts = { filter_kind = false, autojump = true },
         cmd = { 'AerialToggle', 'AerialNavToggle' },
     },
     {
@@ -133,7 +125,7 @@ local Plugins = {
         config = function()
             require 'custom.configs.image'
         end,
-        event = 'BufEnter',
+        event = 'VeryLazy',
     },
     {
         'windwp/nvim-ts-autotag', -- Adds a closing tag when writing html
@@ -154,7 +146,7 @@ local Plugins = {
     {
         'kevinhwang91/nvim-ufo', -- Adds folding that looks decent
         dependencies = 'kevinhwang91/promise-async',
-        event = { 'BufEnter' },
+        event = 'VeryLazy',
         config = function()
             require('ufo').setup {
                 provider_selector = function()
@@ -188,23 +180,18 @@ local Plugins = {
             require('nvim-treesitter.install').prefer_git = true
         end,
     },
-    {
-        'otavioschwanck/cool-substitute.nvim',
-        opts = { setup_keybindings = true },
-        event = 'BufEnter',
-    },
     { 'max397574/better-escape.nvim', event = 'InsertEnter', opts = {} },
     { 'nicwest/vim-camelsnek', cmd = { 'Snek', 'Camel', 'CamelB', 'Screm' } },
     { 'fladson/vim-kitty', ft = 'kitty' },
     { 'rust-lang/rust.vim', ft = 'rust' },
     { 'b0o/schemastore.nvim', ft = 'json' },
     { 'mattn/emmet-vim', ft = { 'html', 'svelte' } },
-    { 'tpope/vim-surround', event = { 'BufEnter' } },
-    { 'tpope/vim-commentary', event = { 'BufEnter' } },
-    { 'tpope/vim-fugitive', cmd = { 'Git' } },
-    { 'mbbill/undotree', cmd = { 'UndotreeToggle' } },
+    { 'tpope/vim-surround', event = 'VeryLazy' },
+    { 'tpope/vim-commentary', event = 'VeryLazy' },
+    { 'tpope/vim-fugitive', cmd = 'Git' },
+    { 'mbbill/undotree', cmd = 'UndotreeToggle' },
     { 'williamboman/mason.nvim', opts = require 'custom.configs.mason' },
-    { 'ThePrimeagen/vim-be-good', cmd = { 'VimBeGood' } },
+    { 'ThePrimeagen/vim-be-good', cmd = 'VimBeGood' },
     { 'nvim-tree/nvim-tree.lua', enabled = false },
 }
 
