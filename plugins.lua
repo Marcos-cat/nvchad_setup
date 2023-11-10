@@ -4,7 +4,11 @@ local notes_home = vim.fn.expand '~/Documents/Notes'
 local Plugins = {
     {
         'stevearc/aerial.nvim',
-        opts = { filter_kind = false, autojump = true },
+        opts = {
+            filter_kind = false,
+            autojump = true,
+            backends = { lua = { 'lsp' } },
+        },
         cmd = { 'AerialToggle', 'AerialNavToggle' },
     },
     {

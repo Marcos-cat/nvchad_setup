@@ -5,9 +5,7 @@ local config = {}
 local highlights = require 'custom.highlights'
 
 config.ui = {
-    statusline = {
-        theme = 'minimal',
-    },
+    statusline = { theme = 'minimal' },
     transparency = false,
     nvdash = {
         load_on_startup = true,

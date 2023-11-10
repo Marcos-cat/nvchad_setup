@@ -2,18 +2,29 @@ local mappings = {}
 
 mappings.general = {
     n = {
-        ['<leader>fm'] = { '<cmd> GuardFmt <CR>', 'Format code' },
-        ['<leader>ru'] = { '<cmd> RunCode <CR>', 'Run file' },
         ['<leader>re'] = { ':%s/', 'File-wide search & replace' },
         ['<leader>sa'] = { ':w <CR>', 'Save' },
-        ['<leader>u'] = { '<cmd> UndotreeToggle <CR>', 'Undo Tree' },
         ['<leader>Q'] = { '<cmd> quitall <CR>', 'Close Vim' },
     },
 }
 
+mappings.code_runner = {
+    n = { ['<leader>ru'] = { '<cmd> RunCode <CR>', 'Run file' } },
+}
+
+mappings.undotree = {
+    n = { ['<leader>u'] = { '<cmd> UndotreeToggle <CR>', 'Undo Tree' } },
+}
+
+mappings.guard = {
+    n = { ['<leader>fm'] = { '<cmd> GuardFmt <CR>', 'Format code' } },
+}
+
 mappings.aerial = {
     n = {
-        ['\\'] = { '<cmd> AerialNavToggle <CR>', 'Open Aerial' },
+        ['\\'] = { '<cmd> AerialNavToggle <CR>', 'Open Aerial Floating' },
+        ['|'] = { '<cmd> AerialToggle <CR>', 'Open Aerial Sidebar' },
+        ['<leader>fs'] = { '<cmd> Telescope aerial <CR>', 'Telescope Aerial' },
     },
 }
 
@@ -24,11 +35,7 @@ mappings.icon_picker = {
     },
 }
 
-mappings.oil = {
-    n = {
-        ['-'] = { '<cmd> Oil <CR>', 'Open Oil' },
-    },
-}
+mappings.oil = { n = { ['-'] = { '<cmd> Oil <CR>', 'Open Oil' } } }
 
 mappings.snek_case = {
     n = {
