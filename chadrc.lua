@@ -8,6 +8,7 @@ config.ui = {
     statusline = { theme = 'minimal' },
     transparency = false,
     nvdash = {
+        header = require('custom.headers').lulu_block,
         load_on_startup = true,
         buttons = {
             { '  Find File', 'Spc f f', 'Telescope find_files' },
@@ -18,6 +19,7 @@ config.ui = {
             { '  Mappings', 'Spc c h', 'NvCheatsheet' },
         },
     },
+
     theme = 'catppuccin',
     theme_toggle = { 'catppuccin', 'one_light' },
 
