@@ -53,13 +53,6 @@ local Plugins = {
         cmd = 'Telekasten',
     },
     {
-        'ggandor/leap.nvim', -- You can move to a spot using two letter pairs
-        config = function()
-            require('leap').add_default_mappings()
-        end,
-        keys = { 's', 'S' },
-    },
-    {
         'stevearc/oil.nvim', -- Adds an editable file viewer with - (dash)
         opts = {},
         dependencies = { 'nvim-tree/nvim-web-devicons' },
@@ -132,13 +125,6 @@ local Plugins = {
         event = 'VeryLazy',
     },
     {
-        'windwp/nvim-ts-autotag', -- Adds a closing tag when writing html
-        config = function()
-            require('nvim-ts-autotag').setup()
-        end,
-        ft = { 'svelte', 'html', 'xml' },
-    },
-    {
         'christoomey/vim-tmux-navigator', -- Maps Ctrl-hjkl to moving windows and tmux panes
         cmd = {
             'TmuxNavigateUp',
@@ -184,18 +170,16 @@ local Plugins = {
             require('nvim-treesitter.install').prefer_git = true
         end,
     },
-    { 'max397574/better-escape.nvim', event = 'InsertEnter', opts = {} },
     { 'nicwest/vim-camelsnek', cmd = { 'Snek', 'Camel', 'CamelB', 'Screm' } },
     { 'fladson/vim-kitty', ft = 'kitty' },
     { 'rust-lang/rust.vim', ft = 'rust' },
     { 'b0o/schemastore.nvim', ft = 'json' },
-    { 'mattn/emmet-vim', ft = { 'html', 'svelte' } },
+    -- { 'mattn/emmet-vim', ft = { 'html', 'svelte' } },
     { 'tpope/vim-surround', event = 'VeryLazy' },
     { 'tpope/vim-commentary', event = 'VeryLazy' },
     { 'tpope/vim-fugitive', cmd = 'Git' },
     { 'mbbill/undotree', cmd = 'UndotreeToggle' },
     { 'williamboman/mason.nvim', opts = require 'custom.configs.mason' },
-    { 'ThePrimeagen/vim-be-good', cmd = 'VimBeGood' },
     { 'nvim-tree/nvim-tree.lua', enabled = false },
 }
 
