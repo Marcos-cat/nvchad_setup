@@ -1,5 +1,3 @@
-local notes_home = vim.fn.expand '~/Documents/Notes'
-
 ---@type LazySpec[]
 local Plugins = {
     {
@@ -41,16 +39,6 @@ local Plugins = {
         opts = { disable_legacy_commands = true },
         dependencies = { 'stevearc/dressing.nvim' },
         cmd = { 'IconPickerInsert', 'IconPickerNormal', 'IconPickerYank' },
-    },
-    {
-        'renerocksai/telekasten.nvim',
-        dependencies = { 'nvim-telescope/telescope.nvim' },
-        opts = {
-            home = notes_home,
-            dailies = notes_home .. '/dailies',
-            auto_set_filetype = false,
-        },
-        cmd = 'Telekasten',
     },
     {
         'stevearc/oil.nvim', -- Adds an editable file viewer with - (dash)
@@ -108,9 +96,7 @@ local Plugins = {
     },
     {
         'CRAG666/code_runner.nvim', -- Runs the current file in a differnt buffer
-        config = function()
-            require 'custom.configs.code_runner'
-        end,
+        opts = require 'custom.configs.code_runner',
         cmd = { 'RunCode', 'RunFile', 'RunProject' },
     },
     {
@@ -119,9 +105,7 @@ local Plugins = {
             'nvim-lua/plenary.nvim',
             'm00qek/baleia.nvim',
         },
-        config = function()
-            require 'custom.configs.image'
-        end,
+        opts = require 'custom.configs.image',
         event = 'VeryLazy',
     },
     {
@@ -137,13 +121,11 @@ local Plugins = {
         'kevinhwang91/nvim-ufo', -- Adds folding that looks decent
         dependencies = 'kevinhwang91/promise-async',
         event = 'VeryLazy',
-        config = function()
-            require('ufo').setup {
-                provider_selector = function()
-                    return { 'treesitter', 'indent' }
-                end,
-            }
-        end,
+        opts = {
+            provider_selector = function()
+                return { 'treesitter', 'indent' }
+            end,
+        },
     },
     {
         'neovim/nvim-lspconfig', -- Configures LSPs

@@ -1,4 +1,4 @@
-require('code_runner').setup {
+local M = {
     filetype = {
         typescript = 'bun run',
         javascript = 'bun run',
@@ -16,3 +16,5 @@ require('code_runner').setup {
         },
     },
 }
+
+return M

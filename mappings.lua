@@ -69,32 +69,6 @@ mappings.git = {
     },
 }
 
-mappings.telekasten = {
-    n = {
-        ['<CR>'] = {
-            function()
-                if vim.o.filetype == 'markdown' then
-                    vim.cmd 'Telekasten follow_link'
-                end
-            end,
-            'Follow the link',
-        },
-        ['<leader>tm'] = {
-            function()
-                if vim.o.filetype == 'markdown' then
-                    vim.cmd 'Telekasten toggle_todo'
-                end
-            end,
-            'Toggle Todo',
-        },
-        ['<BS>'] = {
-            '<cmd> edit # <CR>',
-            'Go to previous buffer',
-            { silent = true },
-        },
-    },
-}
-
 mappings.primeagen = {
     n = {
         ['x'] = { '"_x' },
