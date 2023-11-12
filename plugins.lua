@@ -148,9 +148,6 @@ local Plugins = {
     {
         'nvim-treesitter/nvim-treesitter', -- Enables good synatax highlighting for many languages
         opts = require 'custom.configs.treesitter',
-        init = function()
-            require('nvim-treesitter.install').prefer_git = true
-        end,
     },
     { 'nicwest/vim-camelsnek', cmd = { 'Snek', 'Camel', 'CamelB', 'Screm' } },
     { 'fladson/vim-kitty', ft = 'kitty' },

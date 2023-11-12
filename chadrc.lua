@@ -7,6 +7,8 @@ local highlights = require 'custom.highlights'
 config.ui = {
     statusline = { theme = 'minimal' },
     transparency = false,
+    telescope = { style = 'bordered' },
+
     nvdash = {
         header = require('custom.headers').lulu_block,
         load_on_startup = true,
