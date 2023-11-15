@@ -26,6 +26,7 @@ local M = {
         'gopls',
         'ocaml-lsp',
         'taplo',
+        'emmet-language-server',
     },
 }
 

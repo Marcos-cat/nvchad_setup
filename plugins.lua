@@ -153,7 +153,6 @@ local Plugins = {
     { 'fladson/vim-kitty', ft = 'kitty' },
     { 'rust-lang/rust.vim', ft = 'rust' },
     { 'b0o/schemastore.nvim', ft = 'json' },
-    -- { 'mattn/emmet-vim', ft = { 'html', 'svelte' } },
     { 'tpope/vim-surround', event = 'VeryLazy' },
     { 'tpope/vim-commentary', event = 'VeryLazy' },
     { 'tpope/vim-fugitive', cmd = 'Git' },
