@@ -1,5 +1,5 @@
 ---@type LazySpec[]
-local Plugins = {
+local M = {
     {
         'stevearc/aerial.nvim',
         opts = {
@@ -101,10 +101,7 @@ local Plugins = {
     },
     {
         'samodostal/image.nvim', -- Turns images into ASCII art to view in a buffer
-        dependencies = {
-            'nvim-lua/plenary.nvim',
-            'm00qek/baleia.nvim',
-        },
+        dependencies = { 'nvim-lua/plenary.nvim', 'm00qek/baleia.nvim' },
         opts = require 'custom.configs.image',
         event = 'VeryLazy',
     },
@@ -161,4 +158,4 @@ local Plugins = {
     { 'nvim-tree/nvim-tree.lua', enabled = false },
 }
 
-return Plugins
+return M

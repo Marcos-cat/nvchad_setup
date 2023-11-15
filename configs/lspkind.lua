@@ -1,4 +1,4 @@
-local Icons = {
+local M = {
     Text = '󰉿',
     Method = '󰆧',
     Function = '󰊕',
@@ -25,4 +25,4 @@ local Icons = {
     Operator = '󰆕',
 }
 
-return Icons
+return M
