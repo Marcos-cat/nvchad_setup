@@ -17,6 +17,7 @@ local servers = {
     'ocamllsp',
     'taplo',
     'emmet_language_server',
+    'htmx',
 }
 
 for _, lsp in ipairs(servers) do

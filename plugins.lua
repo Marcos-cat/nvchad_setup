@@ -3,7 +3,10 @@ local M = {
     {
         'folke/zen-mode.nvim',
         opts = {
-            plugins = { tmux = { enabled = true }, gitsigns = { enabled = true } },
+            plugins = {
+                tmux = { enabled = true },
+                gitsigns = { enabled = true },
+            },
             on_open = function()
                 vim.o.laststatus = 0 -- Disable statusline
             end,
