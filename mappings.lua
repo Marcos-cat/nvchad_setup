@@ -8,6 +8,10 @@ mappings.general = {
     },
 }
 
+mappings.zen_mode = {
+    n = { ['<leader>zn'] = { '<cmd> ZenMode <CR>', 'Zen Mode' } },
+}
+
 mappings.code_runner = {
     n = { ['<leader>ru'] = { '<cmd> RunCode <CR>', 'Run file' } },
 }

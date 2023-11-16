@@ -1,6 +1,20 @@
 ---@type LazySpec[]
 local M = {
     {
+        'folke/zen-mode.nvim',
+        opts = {
+            plugins = { tmux = { enabled = true }, gitsigns = { enabled = true } },
+            on_open = function()
+                vim.o.laststatus = 0 -- Disable statusline
+            end,
+            on_close = function()
+                vim.o.laststatus = 3 -- Enable statusline
+            end,
+        },
+        dependencies = { 'folke/twilight.nvim', opts = {} },
+        cmd = 'ZenMode',
+    },
+    {
         'stevearc/aerial.nvim',
         opts = {
             filter_kind = false,
