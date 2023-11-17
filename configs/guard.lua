@@ -50,9 +50,6 @@ ft('rust'):fmt 'rustfmt'
 ft('bash,sh'):fmt 'shfmt'
 ft('ocaml'):fmt(ocamlformat)
 
--- Call setup() LAST!
-require('guard').setup {
-    -- the only options for the setup function
-    fmt_on_save = false,
-    lsp_as_default_formatter = false,
-}
+local opts = { fmt_on_save = false }
+
+require('guard').setup(opts)

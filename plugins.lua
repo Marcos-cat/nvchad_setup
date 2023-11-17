@@ -19,11 +19,7 @@ local M = {
     },
     {
         'stevearc/aerial.nvim',
-        opts = {
-            filter_kind = false,
-            autojump = true,
-            backends = { lua = { 'lsp' } },
-        },
+        opts = require 'custom.configs.aerial',
         cmd = { 'AerialToggle', 'AerialNavToggle' },
     },
     {
@@ -40,15 +36,7 @@ local M = {
         opts = require 'custom.configs.noice',
         dependencies = {
             'MunifTanjim/nui.nvim',
-            {
-                'rcarriga/nvim-notify',
-                opts = {
-                    render = 'compact',
-                    stages = 'fade',
-                    timeout = 2000,
-                    fps = 60,
-                },
-            },
+            { 'rcarriga/nvim-notify', opts = require 'custom.configs.nofity' },
         },
     },
     {
@@ -113,7 +101,7 @@ local M = {
     },
     {
         'CRAG666/code_runner.nvim', -- Runs the current file in a differnt buffer
-        opts = require 'custom.configs.code_runner',
+        opts = require 'custom.configs.coderunner',
         cmd = { 'RunCode', 'RunFile', 'RunProject' },
     },
     {
@@ -147,10 +135,9 @@ local M = {
             'stevearc/dressing.nvim',
             {
                 'onsails/lspkind.nvim',
-                config = function()
-                    require('lspkind').init {
-                        symbol_map = require 'custom.configs.lspkind',
-                    }
+                opts = { symbol_map = require 'custom.configs.lspsymbols' },
+                config = function(_, opts)
+                    require('lspkind').init(opts)
                 end,
             },
         },
