@@ -49,28 +49,8 @@ mappings.snek_case = {
     },
 }
 
-mappings.git = {
-    n = {
-        ['<leader>ga'] = { '<cmd> Git add --all <CR>', 'Stage all files' },
-        ['<leader>gc'] = {
-            function()
-                local message = vim.fn.input 'Commit message: '
-
-                vim.cmd('Git commit -m "' .. message .. '"')
-            end,
-            'Commit branch',
-        },
-        ['<leader>gp'] = {
-            '<cmd> Git push <CR>',
-            'Push to GitHub',
-            { silent = true },
-        },
-        ['<leader>gf'] = {
-            '<cmd> Telescope git_status <CR>',
-            'Telescope Git status',
-        },
-        ['<leader>gt'] = { '<cmd> Git <CR>', 'Open interactive Git menu' },
-    },
+mappings.lazygit = {
+    n = { ['<leader>gt'] = { '<cmd> LazyGit <CR>', 'Open Lazygit' } },
 }
 
 mappings.primeagen = {
