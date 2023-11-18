@@ -1,12 +1,10 @@
-local M = {}
-
 local c = {
     white = '#cdd6f4',
     yellow = '#f9e2af',
     gray = '#666666',
 }
 
-M = {
+local M = {
     color_icons = true,
     strict = true,
 
@@ -24,15 +22,20 @@ M = {
     },
 
     override_by_extension = {
-        ['ml'] = {
+        ml = {
             icon = '',
             color = c.yellow,
             name = 'Ocaml',
         },
-        ['txt'] = {
+        txt = {
             icon = '',
             color = c.white,
             name = 'Text',
+        },
+        ua = {
+            icon = '󰕉',
+            color = '#30ab97',
+            name = 'Uiua',
         },
     },
 }
