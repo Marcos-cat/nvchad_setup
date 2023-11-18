@@ -47,7 +47,10 @@ local M = {
     },
     {
         'stevearc/oil.nvim', -- Adds an editable file viewer with - (dash)
-        opts = {},
+        opts = {
+            keymaps = { ['q'] = 'actions.close' },
+            float = { max_width = 100, max_height = 30 },
+        },
         dependencies = { 'nvim-tree/nvim-web-devicons' },
         cmd = 'Oil',
     },

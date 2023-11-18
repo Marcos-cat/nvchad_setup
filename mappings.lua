@@ -39,7 +39,16 @@ mappings.icon_picker = {
     },
 }
 
-mappings.oil = { n = { ['-'] = { '<cmd> Oil <CR>', 'Open Oil' } } }
+mappings.oil = {
+    n = {
+        ['-'] = {
+            function()
+                require('oil').open_float()
+            end,
+            'Open Oil',
+        },
+    },
+}
 
 mappings.snek_case = {
     n = {
@@ -50,7 +59,7 @@ mappings.snek_case = {
 }
 
 mappings.lazygit = {
-    n = { ['<leader>gt'] = { '<cmd> LazyGit <CR>', 'Open Lazygit' } },
+    n = { ['<leader>lz'] = { '<cmd> LazyGit <CR>', 'Open Lazygit' } },
 }
 
 mappings.primeagen = {
