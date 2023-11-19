@@ -47,10 +47,7 @@ local M = {
     },
     {
         'stevearc/oil.nvim', -- Adds an editable file viewer with - (dash)
-        opts = {
-            keymaps = { ['q'] = 'actions.close' },
-            float = { max_width = 100, max_height = 30 },
-        },
+        opts = require 'custom.configs.oil',
         dependencies = { 'nvim-tree/nvim-web-devicons' },
         cmd = 'Oil',
     },
@@ -101,17 +98,14 @@ local M = {
             table.insert(M.sources, { name = 'crates' })
             return M
         end,
+        init = function()
+            require 'custom.configs.luasnip'
+        end,
     },
     {
         'CRAG666/code_runner.nvim', -- Runs the current file in a differnt buffer
         opts = require 'custom.configs.coderunner',
         cmd = { 'RunCode', 'RunFile', 'RunProject' },
-    },
-    {
-        'samodostal/image.nvim', -- Turns images into ASCII art to view in a buffer
-        dependencies = { 'nvim-lua/plenary.nvim', 'm00qek/baleia.nvim' },
-        opts = require 'custom.configs.image',
-        event = 'VeryLazy',
     },
     {
         'christoomey/vim-tmux-navigator', -- Maps Ctrl-hjkl to moving windows and tmux panes
