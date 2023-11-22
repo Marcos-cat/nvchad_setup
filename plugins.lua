@@ -2,18 +2,7 @@
 local M = {
     {
         'folke/zen-mode.nvim',
-        opts = {
-            plugins = {
-                tmux = { enabled = true },
-                gitsigns = { enabled = true },
-            },
-            on_open = function()
-                vim.o.laststatus = 0 -- Disable statusline
-            end,
-            on_close = function()
-                vim.o.laststatus = 3 -- Enable statusline
-            end,
-        },
+        opts = require 'custom.configs.zenmode',
         dependencies = { 'folke/twilight.nvim', opts = {} },
         cmd = 'ZenMode',
     },
@@ -145,7 +134,8 @@ local M = {
     },
     {
         'nvim-treesitter/nvim-treesitter', -- Enables good synatax highlighting for many languages
-        opts = require 'custom.configs.treesitter',
+        opts = require('custom.configs.treesitter').opts,
+        init = require('custom.configs.treesitter').init,
     },
     { 'nicwest/vim-camelsnek', cmd = { 'Snek', 'Camel', 'CamelB', 'Screm' } },
     { 'fladson/vim-kitty', ft = 'kitty' },
