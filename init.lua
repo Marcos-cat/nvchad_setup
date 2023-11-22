@@ -5,13 +5,14 @@ end
 vim.cmd 'autocmd FileType markdown setlocal wrap'
 vim.cmd 'autocmd FileType markdown setlocal linebreak'
 
+vim.filetype.add { extension = { ua = 'uiua' } }
+
 vim.g.vim_markdown_frontmatter = 1
 vim.g.rustfmt_autosave = 1
 
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
 
-vim.opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
