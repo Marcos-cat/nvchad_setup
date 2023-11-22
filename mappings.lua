@@ -8,6 +8,15 @@ mappings.general = {
     },
 }
 
+mappings.harpoon = {
+    n = {
+        ['<tab>'] = { '<cmd> Harpoon next <CR>', 'Next Mark' },
+        ['<S-tab>'] = { '<cmd> Harpoon prev <CR>', 'Previous Mark' },
+        ['<leader>a'] = { '<cmd> Harpoon add <CR>', 'Add Mark' },
+        ['<leader>A'] = { '<cmd> Harpoon toggle <CR>', 'Harpoon Menu' },
+    },
+}
+
 mappings.zen_mode = {
     n = { ['<leader>zn'] = { '<cmd> ZenMode <CR>', 'Zen Mode' } },
 }
@@ -77,8 +86,6 @@ mappings.primeagen = {
         ['<leader>y'] = { '"+y', 'Clipboard yank' },
 
         ['J'] = { 'mzJ`z', 'Append the following line to the current line' },
-        ['<C-d>'] = { '<C-d>zz', 'Move a half page down' },
-        ['<C-u>'] = { '<C-u>zz', 'Move a half page up' },
         ['Q'] = { '<nop>', 'Disable the horrors of Q' },
     },
     x = {

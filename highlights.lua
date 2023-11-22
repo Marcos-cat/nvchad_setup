@@ -37,7 +37,10 @@ highlights.add = {
     NotifyDEBUGIcon = { fg = 'grey' },
     NotifyDEBUGTitle = { fg = 'grey' },
 
-    tkTag = { fg = 'purple' },
+    TabLineFill = { bg = 'NONE' },
+    HarpoonActive = { bold = true },
+    HarpoonNumberActive = { bold = true, fg = 'blue' },
+    HarpoonNumberInactive = { bold = true, fg = 'blue' },
 }
 
 return highlights

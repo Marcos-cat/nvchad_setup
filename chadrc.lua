@@ -8,6 +8,7 @@ config.ui = {
     statusline = { theme = 'minimal' },
     transparency = false,
     telescope = { style = 'bordered' },
+    tabufline = { enabled = false },
 
     nvdash = {
         header = require('custom.headers').lulu_block,

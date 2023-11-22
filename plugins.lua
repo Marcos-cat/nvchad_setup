@@ -1,6 +1,12 @@
 ---@type LazySpec[]
 local M = {
     {
+        'ThePrimeagen/harpoon',
+        opts = { tabline = true, tabline_prefix = '  ', tabline_suffix = '  ' },
+        init = require 'custom.configs.harpoon',
+        event = 'VeryLazy',
+    },
+    {
         'folke/zen-mode.nvim',
         opts = require 'custom.configs.zenmode',
         dependencies = { 'folke/twilight.nvim', opts = {} },
