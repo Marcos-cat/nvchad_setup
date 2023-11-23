@@ -10,10 +10,10 @@ mappings.general = {
 
 mappings.harpoon = {
     n = {
-        ['<tab>'] = { '<cmd> Harpoon next <CR>', 'Next Mark' },
-        ['<S-tab>'] = { '<cmd> Harpoon prev <CR>', 'Previous Mark' },
-        ['<leader>a'] = { '<cmd> Harpoon add <CR>', 'Add Mark' },
-        ['<leader>A'] = { '<cmd> Harpoon toggle <CR>', 'Harpoon Menu' },
+        ['<tab>'] = { '<cmd> HarpoonNext <CR>', 'Next Mark' },
+        ['<S-tab>'] = { '<cmd> HarpoonPrev <CR>', 'Previous Mark' },
+        ['<leader>a'] = { '<cmd> HarpoonAdd <CR>', 'Add Mark' },
+        ['<leader>A'] = { '<cmd> HarpoonToggle <CR>', 'Harpoon Menu' },
     },
 }
 

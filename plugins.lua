@@ -2,9 +2,10 @@
 local M = {
     {
         'ThePrimeagen/harpoon',
-        opts = { tabline = true, tabline_prefix = '  ', tabline_suffix = '  ' },
-        init = require 'custom.configs.harpoon',
-        event = 'VeryLazy',
+        config = function()
+            require 'custom.configs.harpoon'
+        end,
+        cmd = { 'HarpoonNext', 'HarpoonPrev', 'HarpoonAdd', 'HarpoonToggle' },
     },
     {
         'folke/zen-mode.nvim',
@@ -140,8 +141,8 @@ local M = {
     },
     {
         'nvim-treesitter/nvim-treesitter', -- Enables good synatax highlighting for many languages
-        opts = require('custom.configs.treesitter').opts,
-        init = require('custom.configs.treesitter').init,
+        opts = require 'custom.configs.treesitter',
+        -- init = require('custom.configs.treesitter').init,
     },
     { 'nicwest/vim-camelsnek', cmd = { 'Snek', 'Camel', 'CamelB', 'Screm' } },
     { 'fladson/vim-kitty', ft = 'kitty' },

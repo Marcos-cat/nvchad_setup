@@ -1,27 +1,25 @@
-local M = function()
-    vim.api.nvim_create_user_command('Harpoon', function(opts)
-        local ui = require 'harpoon.ui'
-        local arg = vim.trim(opts.fargs[1])
+local opts = { tabline = true, tabline_prefix = '   ', tabline_suffix = '  ' }
 
-        if tonumber(arg) ~= nil then
-            ui.nav_file(tonumber(arg))
-        elseif arg == 'next' then
-            ui.nav_next()
-        elseif arg == 'prev' then
-            ui.nav_prev()
-        elseif arg == 'add' then
-            require('harpoon.mark').add_file()
-        elseif arg == 'toggle' then
-            ui.toggle_quick_menu()
-        else
-            print 'Invalid command'
-        end
-    end, {
-        nargs = 1,
-        complete = function()
-            return { 'next', 'prev', 'add', 'toggle' }
-        end,
-    })
+require('harpoon').setup(opts)
+
+local ui = require 'harpoon.ui'
+local mark = require 'harpoon.mark'
+
+local cmds = {
+    HarpoonToggle = function()
+        ui.toggle_quick_menu()
+    end,
+    HarpoonNext = function()
+        ui.nav_next()
+    end,
+    HarpoonPrev = function()
+        ui.nav_prev()
+    end,
+    HarpoonAdd = function()
+        mark.add_file()
+    end,
+}
+
+for cmd, func in pairs(cmds) do
+    vim.api.nvim_create_user_command(cmd, func, {})
 end
-
-return M
