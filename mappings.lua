@@ -1,3 +1,4 @@
+---@type MappingsTable
 local mappings = {}
 
 mappings.general = {
@@ -74,29 +75,35 @@ mappings.lazygit = {
 mappings.primeagen = {
     n = {
         ['x'] = { '"_x' },
-
-        ['d'] = { '""d' },
-        ['c'] = { '""c' },
         ['<leader>d'] = { '"_d', 'Delete without yanking' },
         ['<leader>c'] = { '"_c', 'Change without yanking' },
 
+        ['d'] = { '""d' },
+        ['c'] = { '""c' },
         ['p'] = { '""p' },
+        ['P'] = { '""P' },
         ['y'] = { '""y' },
+
         ['<leader>p'] = { '"+p', 'Clipboard paste' },
+        ['<leader>P'] = { '"+P', 'Clipboard paste' },
         ['<leader>y'] = { '"+y', 'Clipboard yank' },
 
         ['J'] = { 'mzJ`z', 'Append the following line to the current line' },
         ['Q'] = { '<nop>', 'Disable the horrors of Q' },
     },
     x = {
+        ['<leader>y'] = { '"+y', 'Clipboard yank' },
+        ['y'] = { '""y' },
         ['<leader>p'] = { '"_dP', 'Paste over a highlighted word' },
     },
     v = {
         ['<leader>p'] = { '"+p', 'Clipboard paste' },
         ['<leader>y'] = { '"+y', 'Clipboard yank' },
+        ['<leader>d'] = { '"_d', 'Delete without yanking' },
+        ['<leader>c'] = { '"_c', 'Change without yanking' },
+
         ['J'] = { ":m '>+1<CR>gv=gv", 'Move selected lines down' },
         ['K'] = { ":m '<-2<CR>gv=gv", 'Move selected lines up' },
-        ['<leader>d'] = { '"_d', 'Delete without yanking' },
     },
 }
 
