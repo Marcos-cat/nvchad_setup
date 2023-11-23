@@ -11,7 +11,7 @@ config.ui = {
     tabufline = { enabled = false },
 
     nvdash = {
-        header = require('custom.headers').lulu_block,
+        header = require('custom.banners').lulu_block,
         load_on_startup = true,
         buttons = {
             { '  Find File', 'Spc f f', 'Telescope find_files' },
