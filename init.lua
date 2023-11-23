@@ -1,7 +1,3 @@
-function MarkdownHighlightTags()
-    vim.cmd 'syntax match MyTag /#[\\x21-\\x7E]\\+/'
-end
-
 vim.cmd 'autocmd FileType markdown setlocal wrap'
 vim.cmd 'autocmd FileType markdown setlocal linebreak'
 
