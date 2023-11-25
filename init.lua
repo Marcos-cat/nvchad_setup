@@ -3,6 +3,11 @@ vim.cmd 'autocmd FileType markdown setlocal linebreak'
 
 vim.filetype.add { extension = { ua = 'uiua' } }
 
+function P(val)
+    print(vim.inspect(val))
+    return val
+end
+
 vim.g.vim_markdown_frontmatter = 1
 vim.g.rustfmt_autosave = 1
 
