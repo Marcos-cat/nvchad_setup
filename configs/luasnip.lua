@@ -9,7 +9,7 @@ ls.add_snippets('javascript', {
     s('param', { t '/** @param {', i(1), t '}', i(2), t ' */' }),
 })
 
-ls.add_snippets('javascript', {
+ls.add_snippets('lua', {
     s('type', { t '---@type ', i(1) }),
     s('param', { t '---@param ', i(1) }),
 })
