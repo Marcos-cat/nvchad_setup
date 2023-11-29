@@ -1,4 +1,3 @@
----@type ChadrcConfig
 local config = {}
 
 -- Path to overriding theme and highlights files

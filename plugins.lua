@@ -1,6 +1,12 @@
 ---@type LazySpec[]
 local M = {
     {
+        -- 'Marcos-cat/traverse.nvim',
+        dir = '/home/marcospotato/Documents/lua_plugin/traverse.nvim',
+        opts = { logging = true },
+        cmd = 'Traverse',
+    },
+    {
         'ThePrimeagen/harpoon',
         config = function()
             require 'custom.configs.harpoon'
@@ -126,6 +132,7 @@ local M = {
         'neovim/nvim-lspconfig', -- Configures LSPs
         dependencies = {
             'stevearc/dressing.nvim',
+            { 'folke/neodev.nvim', opts = {} },
             {
                 'onsails/lspkind.nvim',
                 opts = { symbol_map = require 'custom.configs.lspsymbols' },

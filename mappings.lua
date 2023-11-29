@@ -1,4 +1,3 @@
----@type MappingsTable
 local mappings = {}
 
 mappings.general = {
@@ -7,6 +6,10 @@ mappings.general = {
         ['<leader>sa'] = { ':w <CR>', 'Save' },
         ['<leader>Q'] = { '<cmd> quitall <CR>', 'Close Vim' },
     },
+}
+
+mappings.traverse = {
+    n = { ['<CR>'] = { '<cmd> Traverse <CR>', 'Traverse Links' } },
 }
 
 mappings.harpoon = {
