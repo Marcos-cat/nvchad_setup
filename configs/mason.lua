@@ -1,28 +1,35 @@
 local M = {
     ensure_installed = {
-        'lua-language-server',
+        -- Formatters
         'stylua',
+        'prettier',
+        'clang-format',
+        'black',
+        'shfmt',
+
+        -- Language Servers
+        'lua-language-server',
         'ltex-ls',
         'css-lsp',
         'html-lsp',
         'htmx-lsp',
         'typescript-language-server',
-        'prettier',
         'svelte-language-server',
         'bash-language-server',
         'jdtls',
-        'black',
         'pyright',
-        'mypy',
-        'ruff',
         'json-lsp',
         'clangd',
-        'clang-format',
-        'shfmt',
         'gopls',
         'ocaml-lsp',
         'taplo',
         'emmet-language-server',
+
+        -- Linters
+        'mypy',
+        'ruff',
+        'luacheck',
+        'eslint_d',
     },
 }
 
