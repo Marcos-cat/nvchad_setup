@@ -29,7 +29,6 @@ local M = {
         'mypy',
         'ruff',
         'luacheck',
-        'eslint_d',
     },
 }
 
