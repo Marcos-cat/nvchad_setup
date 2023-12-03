@@ -1,54 +1,77 @@
 local mappings = {}
 
+local function cmd(str) ---@param str string
+    return '<cmd> ' .. str .. '<CR>'
+end
+
 mappings.general = {
     n = {
         ['<leader>re'] = { ':%s/', 'File-wide search & replace' },
         ['<leader>sa'] = { ':w <CR>', 'Save' },
-        ['<leader>Q'] = { '<cmd> quitall <CR>', 'Close Vim' },
+        ['<leader>Q'] = { cmd 'quitall', 'Close Vim' },
+        ['<BS>'] = { cmd 'e #', 'Previous Buffer' },
+        [','] = { '@m' },
     },
 }
 
 mappings.traverse = {
-    n = { ['<CR>'] = { '<cmd> Traverse <CR>', 'Traverse Links' } },
+    n = { ['<CR>'] = { cmd 'Traverse', 'Traverse Links' } },
 }
+
+local function nav(id)
+    return function()
+        require('harpoon.ui').nav_file(id)
+    end
+end
 
 mappings.harpoon = {
     n = {
-        ['<tab>'] = { '<cmd> HarpoonNext <CR>', 'Next Mark' },
-        ['<S-tab>'] = { '<cmd> HarpoonPrev <CR>', 'Previous Mark' },
-        ['<leader>a'] = { '<cmd> HarpoonAdd <CR>', 'Add Mark' },
-        ['<leader>A'] = { '<cmd> HarpoonToggle <CR>', 'Harpoon Menu' },
+        ['<tab>'] = { cmd 'HarpoonNext', 'Next Mark' },
+        ['<S-tab>'] = { cmd 'HarpoonPrev', 'Previous Mark' },
+        ['<leader>a'] = { cmd 'HarpoonAdd', 'Add Mark' },
+        ['<leader>A'] = { cmd 'HarpoonToggle', 'Harpoon Menu' },
+        ['<F1>'] = { nav(1), 'Go to file 1' },
+        ['<F2>'] = { nav(2), 'Go to file 2' },
+        ['<F3>'] = { nav(3), 'Go to file 3' },
+        ['<F4>'] = { nav(4), 'Go to file 4' },
     },
 }
 
 mappings.zen_mode = {
-    n = { ['<leader>zn'] = { '<cmd> ZenMode <CR>', 'Zen Mode' } },
+    n = { ['<leader>zn'] = { cmd 'ZenMode', 'Zen Mode' } },
 }
 
 mappings.code_runner = {
-    n = { ['<leader>ru'] = { '<cmd> RunCode <CR>', 'Run file' } },
+    n = { ['<leader>ru'] = { cmd 'RunCode', 'Run file' } },
 }
 
 mappings.undotree = {
-    n = { ['<leader>u'] = { '<cmd> UndotreeToggle <CR>', 'Undo Tree' } },
+    n = { ['<leader>u'] = { cmd 'UndotreeToggle', 'Undo Tree' } },
 }
 
-mappings.guard = {
-    n = { ['<leader>fm'] = { '<cmd> GuardFmt <CR>', 'Format code' } },
+mappings.conform = {
+    n = {
+        ['<leader>fm'] = {
+            function()
+                require('conform').format()
+            end,
+            'Format code',
+        },
+    },
 }
 
 mappings.aerial = {
     n = {
-        ['\\'] = { '<cmd> AerialNavToggle <CR>', 'Open Aerial Floating' },
-        ['|'] = { '<cmd> AerialToggle <CR>', 'Open Aerial Sidebar' },
-        ['<leader>fs'] = { '<cmd> Telescope aerial <CR>', 'Telescope Aerial' },
+        ['\\'] = { cmd 'AerialNavToggle', 'Open Aerial Floating' },
+        ['|'] = { cmd 'AerialToggle', 'Open Aerial Sidebar' },
+        ['<leader>fs'] = { cmd 'Telescope aerial', 'Telescope Aerial' },
     },
 }
 
 mappings.icon_picker = {
     n = {
-        ['<leader>ei'] = { '<cmd> IconPickerNormal <CR>', 'Insert Emoji' },
-        ['<leader>ey'] = { '<cmd> IconPickerYank <CR>', 'Insert Emoji' },
+        ['<leader>ei'] = { cmd 'IconPickerNormal', 'Insert Emoji' },
+        ['<leader>ey'] = { cmd 'IconPickerYank', 'Insert Emoji' },
     },
 }
 
@@ -65,14 +88,14 @@ mappings.oil = {
 
 mappings.snek_case = {
     n = {
-        ['<leader>sn'] = { '<cmd> Snek <CR>', 'Snake Case' },
-        ['<leader>sc'] = { '<cmd> Camel <CR>', 'Camel Case' },
-        ['<leader>sb'] = { '<cmd> CamelB <CR>', 'Camel Case' },
+        ['<leader>sn'] = { cmd 'Snek', 'Snake Case' },
+        ['<leader>sc'] = { cmd 'Camel', 'Camel Case' },
+        ['<leader>sb'] = { cmd 'CamelB', 'Camel Case' },
     },
 }
 
 mappings.lazygit = {
-    n = { ['<leader>lz'] = { '<cmd> LazyGit <CR>', 'Open Lazygit' } },
+    n = { ['<leader>lz'] = { cmd 'LazyGit', 'Open Lazygit' } },
 }
 
 mappings.primeagen = {
@@ -123,10 +146,10 @@ mappings.crates = {
 
 mappings.tmux = {
     n = {
-        ['<C-h>'] = { '<cmd> TmuxNavigateLeft <CR>', 'Tmux left' },
-        ['<C-j>'] = { '<cmd> TmuxNavigateUp <CR>', 'Tmux up' },
-        ['<C-k>'] = { '<cmd> TmuxNavigateDown <CR>', 'Tmux down' },
-        ['<C-l>'] = { '<cmd> TmuxNavigateRight <CR>', 'Tmux right' },
+        ['<C-h>'] = { cmd 'TmuxNavigateLeft', 'Tmux left' },
+        ['<C-j>'] = { cmd 'TmuxNavigateUp', 'Tmux up' },
+        ['<C-k>'] = { cmd 'TmuxNavigateDown', 'Tmux down' },
+        ['<C-l>'] = { cmd 'TmuxNavigateRight', 'Tmux right' },
     },
 }
 

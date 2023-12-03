@@ -1,9 +1,15 @@
 ---@type LazySpec[]
 local M = {
     {
+        'stevearc/conform.nvim',
+        config = function()
+            require 'custom.configs.conform'
+        end,
+    },
+    {
         -- 'Marcos-cat/traverse.nvim',
         dir = '/home/marcospotato/Documents/lua_plugin/traverse.nvim',
-        opts = { logging = true },
+        opts = {},
         cmd = 'Traverse',
     },
     {
@@ -75,14 +81,14 @@ local M = {
             require('nvim-web-devicons').setup(opts)
         end,
     },
-    {
-        'nvimdev/guard.nvim', -- Adds code formatting
-        dependencies = 'nvimdev/guard-collection',
-        config = function()
-            require 'custom.configs.guard'
-        end,
-        cmd = 'GuardFmt',
-    },
+    -- {
+    --     'nvimdev/guard.nvim', -- Adds code formatting
+    --     dependencies = 'nvimdev/guard-collection',
+    --     config = function()
+    --         require 'custom.configs.guard'
+    --     end,
+    --     cmd = 'GuardFmt',
+    -- },
     {
         'saecki/crates.nvim', -- Looks up crate versions from github and displays them inline
         ft = { 'rust', 'toml' },
