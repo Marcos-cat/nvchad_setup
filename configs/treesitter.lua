@@ -4,7 +4,6 @@ vim.api.nvim_create_autocmd('FileType', {
     pattern = "uiua",
     once = true,
     callback = function()
-        print('hello')
         parser_config.uiua = {
             install_info = {
                 url = 'https://github.com/shnarazk/tree-sitter-uiua',
