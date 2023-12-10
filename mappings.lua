@@ -4,6 +4,8 @@ local function cmd(str) ---@param str string
     return '<cmd> ' .. str .. '<CR>'
 end
 
+mappings.disabled = { n = { ['<leader>pt'] = '', ['<leader>ph'] = '' } }
+
 mappings.general = {
     n = {
         ['<leader>re'] = { ':%s/', 'File-wide search & replace' },
