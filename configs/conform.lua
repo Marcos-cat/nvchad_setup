@@ -21,6 +21,8 @@ local opts = {
         java = { 'clang_format' },
         cpp = { 'clang_format' },
         c = { 'clang_format' },
+
+        markdown = { 'mdformat' },
     },
 }
 
@@ -46,6 +48,7 @@ local pre_args = {
     stylua = { '-f', path .. 'stylua/.stylua.toml' },
     prettier = { '--config', path .. 'prettier/.prettierrc' },
     clang_format = { '-style=file:' .. path .. 'clang/.clang-format' },
+    mdformat = { '--number', '--wrap', '80' },
 }
 
 for formatter, args in pairs(pre_args) do

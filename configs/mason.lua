@@ -6,6 +6,7 @@ local M = {
         'clang-format',
         'black',
         'shfmt',
+        'mdformat',
 
         -- Language Servers
         'lua-language-server',
