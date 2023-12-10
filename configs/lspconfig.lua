@@ -34,9 +34,8 @@ lspconfig.ltex.setup {
     settings = {
         ltex = {
             completionEnabled = true,
-            dictionary = {
-                ['en-US'] = { 'Uiua', 'nvim', 'vim', 'TODO' },
-            },
+            dictionary = { ['en-US'] = { 'Uiua', 'nvim', 'vim', 'TODO' } },
+            checkFrequency = 'save',
         },
     },
 }
