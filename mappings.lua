@@ -12,7 +12,8 @@ mappings.general = {
         ['<leader>sa'] = { ':w <CR>', 'Save' },
         ['<leader>Q'] = { cmd 'quitall', 'Close Vim' },
         ['<BS>'] = { cmd 'e #', 'Previous Buffer' },
-        [','] = { '@m' },
+        ['g>'] = { '<C-a>', 'Increment' },
+        ['g<'] = { '<C-a>', 'Decrement' },
     },
 }
 
