@@ -6,9 +6,11 @@ local M = {
         'clang-format',
         'black',
         'shfmt',
-        'mdformat',
+        -- Do a pip install if not installed
+        -- 'mdformat',
 
         -- Language Servers
+        'vim-language-server',
         'lua-language-server',
         'ltex-ls',
         'css-lsp',

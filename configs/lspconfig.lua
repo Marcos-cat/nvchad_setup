@@ -18,6 +18,7 @@ local servers = {
     'taplo',
     'emmet_language_server',
     'htmx',
+    'vimls',
 }
 
 for _, lsp in ipairs(servers) do
@@ -26,6 +27,12 @@ for _, lsp in ipairs(servers) do
         capabilities = capabilities,
     }
 end
+
+lspconfig.uiua.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+    root_dir = util.root_pattern '*.ua',
+}
 
 lspconfig.ltex.setup {
     on_attach = on_attach,
