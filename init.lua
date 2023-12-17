@@ -1,12 +1,23 @@
-vim.cmd 'autocmd FileType markdown setlocal wrap'
-vim.cmd 'autocmd FileType markdown setlocal linebreak'
-vim.cmd 'autocmd FileType markdown,text setlocal colorcolumn='
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = { 'markdown' },
+    callback = function()
+        vim.cmd [[
+            setlocal wrap
+            setlocal linebreak
+            setlocal colorcolumn=
+        ]]
+    end,
+})
+
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = { 'uiua' },
+    callback = function()
+        vim.cmd 'setlocal commentstring=#%s'
+    end,
+})
 
 vim.filetype.add { extension = { ua = 'uiua' } }
 
----@generic T
----@param val T
----@return T
 function P(val)
     print(vim.inspect(val))
     return val
