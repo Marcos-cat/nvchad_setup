@@ -1,5 +1,6 @@
 ---@type LazySpec[]
 local M = {
+    { 'nvim-lua/plenary.nvim', cmd = 'PlenaryBustedDirectory' },
     {
         'stevearc/conform.nvim',
         config = function()
