@@ -1,6 +1,6 @@
 ---@type LazySpec[]
-local M = {
-    { 'nvim-lua/plenary.nvim', cmd = 'PlenaryBustedDirectory' },
+local Plugins = {
+    { 'folke/trouble.nvim', opts = {}, cmd = 'Trouble' },
     {
         'stevearc/conform.nvim',
         config = function()
@@ -149,4 +149,4 @@ local M = {
     { 'nvim-tree/nvim-tree.lua', enabled = false },
 }
 
-return M
+return Plugins

@@ -8,12 +8,18 @@ mappings.disabled = { n = { ['<leader>pt'] = '', ['<leader>ph'] = '' } }
 
 mappings.general = {
     n = {
-        ['<leader>re'] = { ':%s/', 'File-wide search & replace' },
         ['<leader>sa'] = { ':w <CR>', 'Save' },
-        ['<leader>Q'] = { cmd 'quitall', 'Close Vim' },
         ['<BS>'] = { cmd 'e #', 'Previous Buffer' },
         ['g>'] = { '<C-a>', 'Increment' },
-        ['g<'] = { '<C-a>', 'Decrement' },
+        ['g<'] = { '<C-x>', 'Decrement' },
+        ['<leader>ra'] = { ':IncRename ', 'Rename' },
+    },
+}
+
+mappings.trouble = {
+    n = {
+        ['<leader>q'] = { cmd 'Trouble', 'Open Trouble' },
+        ['gr'] = { cmd 'Trouble lsp_references', 'Lsp References' },
     },
 }
 
@@ -35,8 +41,8 @@ mappings.harpoon = {
         ['<leader>A'] = { cmd 'HarpoonToggle', 'Harpoon Menu' },
         ['<F1>'] = { nav(1), 'Go to file 1' },
         ['<F2>'] = { nav(2), 'Go to file 2' },
-        ['<F3>'] = { nav(3), 'Go to file 3' },
-        ['<F4>'] = { nav(4), 'Go to file 4' },
+        ['<F3>'] = { nav(4), 'Go to file 3' },
+        ['<F4>'] = { nav(5), 'Go to file 4' },
     },
 }
 
@@ -63,14 +69,6 @@ mappings.conform = {
     },
 }
 
-mappings.aerial = {
-    n = {
-        ['\\'] = { cmd 'AerialNavToggle', 'Open Aerial Floating' },
-        ['|'] = { cmd 'AerialToggle', 'Open Aerial Sidebar' },
-        ['<leader>fs'] = { cmd 'Telescope aerial', 'Telescope Aerial' },
-    },
-}
-
 mappings.icon_picker = {
     n = {
         ['<leader>ei'] = { cmd 'IconPickerNormal', 'Insert Emoji' },
@@ -86,14 +84,6 @@ mappings.oil = {
             end,
             'Open Oil',
         },
-    },
-}
-
-mappings.snek_case = {
-    n = {
-        ['<leader>sn'] = { cmd 'Snek', 'Snake Case' },
-        ['<leader>sc'] = { cmd 'Camel', 'Camel Case' },
-        ['<leader>sb'] = { cmd 'CamelB', 'Camel Case' },
     },
 }
 
@@ -126,6 +116,12 @@ mappings.primeagen = {
         ['<leader>p'] = { '"_dP', 'Paste over a highlighted word' },
     },
     v = {
+        ['d'] = { '""d' },
+        ['c'] = { '""c' },
+        ['p'] = { '""p' },
+        ['P'] = { '""P' },
+        ['y'] = { '""y' },
+
         ['<leader>p'] = { '"+p', 'Clipboard paste' },
         ['<leader>y'] = { '"+y', 'Clipboard yank' },
         ['<leader>d'] = { '"_d', 'Delete without yanking' },
