@@ -27,24 +27,12 @@ local M = {
         cmd = 'ZenMode',
     },
     {
-        'stevearc/aerial.nvim',
-        opts = require 'custom.configs.aerial',
-        cmd = { 'AerialToggle', 'AerialNavToggle' },
-    },
-    {
-        'jbyuki/nabla.nvim',
-        opts = { autogen = true, silent = true },
-        config = function(_, opts)
-            require('nabla').enable_virt(opts)
-        end,
-        cmd = 'Nabla',
-    },
-    {
         'folke/noice.nvim',
         event = 'VeryLazy',
         opts = require 'custom.configs.noice',
         dependencies = {
             'MunifTanjim/nui.nvim',
+            { 'smjonas/inc-rename.nvim', opts = {} },
             { 'rcarriga/nvim-notify', opts = require 'custom.configs.nofity' },
         },
     },
@@ -82,14 +70,6 @@ local M = {
             require('nvim-web-devicons').setup(opts)
         end,
     },
-    -- {
-    --     'nvimdev/guard.nvim', -- Adds code formatting
-    --     dependencies = 'nvimdev/guard-collection',
-    --     config = function()
-    --         require 'custom.configs.guard'
-    --     end,
-    --     cmd = 'GuardFmt',
-    -- },
     {
         'saecki/crates.nvim', -- Looks up crate versions from github and displays them inline
         ft = { 'rust', 'toml' },
@@ -158,7 +138,6 @@ local M = {
         opts = require 'custom.configs.treesitter',
         -- init = require('custom.configs.treesitter').init,
     },
-    { 'nicwest/vim-camelsnek', cmd = { 'Snek', 'Camel', 'CamelB', 'Screm' } },
     { 'fladson/vim-kitty', ft = 'kitty' },
     { 'rust-lang/rust.vim', ft = 'rust' },
     { 'b0o/schemastore.nvim', ft = 'json' },
