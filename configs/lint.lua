@@ -3,6 +3,7 @@ local lint = require 'lint'
 lint.linters_by_ft = {
     python = { 'mypy', 'ruff' },
     lua = { 'luacheck' },
+    cpp = { 'cpplint' },
 }
 
 -- Appends the table
