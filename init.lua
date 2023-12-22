@@ -1,4 +1,7 @@
+local group = vim.api.nvim_create_augroup('MyInit', { clear = true })
+
 vim.api.nvim_create_autocmd('FileType', {
+    group = group,
     pattern = { 'markdown' },
     callback = function()
         vim.cmd [[
@@ -10,6 +13,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 vim.api.nvim_create_autocmd('FileType', {
+    group = group,
     pattern = { 'uiua' },
     callback = function()
         vim.cmd 'setlocal commentstring=#%s'
