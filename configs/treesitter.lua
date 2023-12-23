@@ -1,10 +1,13 @@
 local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
 
+local group = vim.api.nvim_create_augroup('UiuaTSInit', { clear = true })
+
 vim.api.nvim_create_autocmd('FileType', {
-    pattern = "uiua",
+    group = group,
+    pattern = 'uiua',
     once = true,
     callback = function()
-        parser_config.uiua = {
+        parser_config['uiua'] = {
             install_info = {
                 url = 'https://github.com/shnarazk/tree-sitter-uiua',
                 files = { 'src/parser.c' },
