@@ -1,5 +1,6 @@
 ---@type LazySpec[]
 local Plugins = {
+    { 'folke/flash.nvim', event = 'VeryLazy', opts = {} },
     { 'folke/trouble.nvim', opts = {}, cmd = 'Trouble' },
     {
         'stevearc/conform.nvim',

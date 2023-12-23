@@ -1,6 +1,5 @@
 local highlights = {}
 
----@type HLTable
 highlights.override = {
     LineNr = {
         fg = 'grey',
@@ -19,8 +18,9 @@ highlights.override = {
     },
 }
 
----@type HLTable
 highlights.add = {
+    FlashLabel = { bg = 'NONE', fg = 'white', bold = true },
+
     NotifyERRORBorder = { fg = 'red' },
     NotifyERRORIcon = { fg = 'red' },
     NotifyERRORTitle = { fg = 'red' },

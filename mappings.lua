@@ -16,10 +16,22 @@ mappings.general = {
     },
 }
 
+mappings.flash = {
+    n = {
+        ['s'] = {
+            function()
+                require('flash').jump()
+            end,
+            'Flash',
+        },
+    },
+}
+
 mappings.trouble = {
     n = {
         ['<leader>q'] = { cmd 'Trouble', 'Open Trouble' },
         ['gr'] = { cmd 'Trouble lsp_references', 'Lsp References' },
+        ['gd'] = { cmd 'Trouble lsp_definitions', 'Lsp Definitions' },
     },
 }
 
